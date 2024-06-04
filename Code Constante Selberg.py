@@ -52,7 +52,7 @@ def C2(x):
 
 def C3(x):
     r=rho(x)
-    return((1/(8*varkappa)+3/2)*((exp(r)+exp(r*x))/((1-x)*sqrt(pi*r))*gammaa)**4*P1)
+    return((1/(8*varkappa)+2)*((exp(r)+exp(r*x))/((1-x)*sqrt(pi*r))*gammaa)**4*P1)
 
 def C4(x):
     return(1/(3*(1-x)*sqrt(pi))*(9/5*(1+x**(5/2))+2*max(3*sqrt(1-x),min(max(1,abs(1-4*x))+3*x*sqrt(x),1-x+3*x*sqrt(1-x)))))
@@ -91,7 +91,7 @@ def k1(x):
 def k2(x,rec=nbr_rec):
     def f(t):
         return(C6(x,t)**2*(1/2+2*varkappa)+2*C4(x)*C6(x,t)*sqrt(varkappa))
-    return(varkappa*P2*bornes_int(rec,f,0,1/varkappa)[1]+P1*(varkappa/(1/2-2*varkappa)+C7**2/(4*(1-x)**2*pi)+C7/(sqrt(pi)*(1-x))*(log(varkappa)-varkappa)))
+    return(varkappa*P2*bornes_int(rec,f,0,1/varkappa)[1]+P1*(varkappa/(1/2-2*varkappa)+C7**2/(4*(1-x)**2*pi)+C7/(sqrt(pi)*(1-x))*(log(varkappa)-1)))
 
 def k3(x):
     return(-C7**2*P1/(4*(1-x)**2*pi*varkappa))
@@ -185,7 +185,7 @@ def lambdap():
 
 def C3p():
     r=rho(1/4)
-    return((1/(8*varkappa)+3/2)*((exp(r)+exp(r/4))/(sqrt(pi*r))*gammaa/sqrt(pi/2))**4*P1)
+    return((1/(8*varkappa)+2)*((exp(r)+exp(r/4))/(sqrt(pi*r))*gammaa/sqrt(pi/2))**4*P1)
 
 def C2p():
     c=C3p()
